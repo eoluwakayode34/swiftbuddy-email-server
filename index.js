@@ -53,11 +53,11 @@ app.post("/subscribe", async (req, res) => {
 
     await apiInstance.createContact(createContact);
 
-    res.status(200).json("Successfully created");
+    res.status(200).send("Successfully created");
   } catch (error) {
     let response = error.response.text;
     let jsonResponse = JSON.parse(response);
-    res.status(400).json(jsonResponse.message);
+    res.status(400).send(jsonResponse.message);
   }
 });
 
